@@ -11,7 +11,7 @@ export const CartBoxResume = () => {
     const total = cart.reduce((acc, value) => {
        return value.price + acc}, 0);
     
-    const realCurrency = total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    const dolarCurrency = total.toLocaleString('en',{style: 'currency', currency: 'USD'});
 
     const handleClick = () => {
         history.push('/login');
@@ -21,7 +21,7 @@ export const CartBoxResume = () => {
         <div>
             <h2>Order Resume</h2>
             <p>{cart.length} products</p>
-            <p>Total: {realCurrency}</p>
+            <p>Total: {dolarCurrency}</p>
             <Button icon={<FiCreditCard />} name='Finalize' type='button' onClick={() => handleClick()}></Button>
         </div>
 

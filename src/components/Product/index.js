@@ -10,14 +10,14 @@ export const ProductRender = ({product, isRemovable = false}) => {
 
    const { id, name , price, image } = product;
 
-   const realCurrency = price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+   const dolarCurrency = price.toLocaleString('en',{style: 'currency', currency: 'USD'});
 
 
     return (
         <Container>
             <img src={image} alt={name}></img>
             <p>{name}</p>
-            <p>{realCurrency}</p>
+            <p>{dolarCurrency}</p>
             {isRemovable ? (
                 <Button name='Delete'icon={<FiTrash2 />} type='button' onClick={() => dispatch(removeFromCartThunk(id))}></Button>
             ) : (

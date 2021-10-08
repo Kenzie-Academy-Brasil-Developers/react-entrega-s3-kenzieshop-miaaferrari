@@ -1,15 +1,15 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div` 
-    margin-top: 30px;
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
+    
     form {
+        margin-top: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
