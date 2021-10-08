@@ -19,8 +19,8 @@ export const CartBoxResume = () => {
 
     return (
         <div>
-            <h2>Resumo do Pedido</h2>
-            <p>{cart.length} produtos</p>
+            <h2>Order Resume</h2>
+            <p>{cart.length} products</p>
             <p>Total: {realCurrency}</p>
             <Button icon={<FiCreditCard />} name='Finalize' type='button' onClick={() => handleClick()}></Button>
         </div>

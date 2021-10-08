@@ -8,7 +8,7 @@ export const CartComponent = () => {
 
     return (
         <Container>
-            <h1>Carrinho de Compras</h1>
+            <h1>Shopping Cart</h1>
             {cart.length > 0 ? (
                 <BoxList>
                     {cart.map((product, index) => <ProductRender key={index} product={product} isRemovable />)}
