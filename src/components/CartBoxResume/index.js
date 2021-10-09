@@ -1,4 +1,4 @@
-import { FiCreditCard } from "react-icons/fi";
+import { FiCreditCard, FiHome } from "react-icons/fi";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { Button } from "../Button/index";
@@ -13,8 +13,8 @@ export const CartBoxResume = () => {
     
     const dolarCurrency = total.toLocaleString('en',{style: 'currency', currency: 'USD'});
 
-    const handleClick = () => {
-        history.push('/login');
+    const handleClick = (path) => {
+        history.push(path);
     }
 
     return (
@@ -22,7 +22,10 @@ export const CartBoxResume = () => {
             <h2>Order Resume</h2>
             <p>{cart.length} products</p>
             <p>Total: {dolarCurrency}</p>
-            <Button icon={<FiCreditCard />} name='Finalize' type='button' onClick={() => handleClick()}></Button>
+            <div>
+                <Button icon={<FiCreditCard />} name='Finalize' type='button' onClick={() => handleClick('/login')}></Button>
+                <Button icon={<FiHome />} name='Home' onClick={() => handleClick('/')} ></Button>
+            </div>
         </div>
 
     )

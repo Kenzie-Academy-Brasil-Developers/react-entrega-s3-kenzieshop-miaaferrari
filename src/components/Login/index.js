@@ -1,7 +1,15 @@
+import { FiHome, FiLogIn } from 'react-icons/fi';
+import { useHistory } from 'react-router';
 import { Button } from '../Button/index';
 import { Container } from './style';
 
 export const LoginComponent = () => {
+
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push('/')
+    };
 
     return (
         <Container>
@@ -23,8 +31,9 @@ export const LoginComponent = () => {
                         name='password'
                     />
                 </div>
-                <Button name='Login' type='submit'></Button>
+                <Button icon={<FiLogIn />}  name='Login' type='submit'></Button>
             </form>
+            <Button icon={<FiHome />} name='Home' onClick={() => handleClick()}></Button>
         </Container>
     )
 }
