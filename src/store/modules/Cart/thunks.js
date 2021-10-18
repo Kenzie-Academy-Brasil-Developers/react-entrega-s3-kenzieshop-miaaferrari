@@ -11,13 +11,18 @@ export const addToCartThunk = (product) => {
     };
 };
 
-export const removeFromCartThunk = (id) => {
+export const removeFromCartThunk = (product) => {
     return (dispatch, getStore) => {
 
         const { cart } = getStore();
-        const list = cart.filter((product) => product.id !== id);
+        const list = [];
+         for (let i = 0; i < cart.length; i++) {
+             if (i !== cart.indexOf(product)) {
+                list.push(cart[i])
+             }  
+         }
         localStorage.setItem('cart', JSON.stringify(list));
-
+        console.log(cart)
         dispatch(removeFromCart(list));
  
     }

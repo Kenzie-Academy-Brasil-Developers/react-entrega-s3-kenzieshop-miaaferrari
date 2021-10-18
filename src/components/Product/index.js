@@ -8,7 +8,7 @@ export const ProductRender = ({product, isRemovable = false}) => {
 
     const dispatch = useDispatch();
 
-   const { id, name , price, image } = product;
+   const { id, name, price, image } = product;
 
    const dolarCurrency = price.toLocaleString('en',{style: 'currency', currency: 'USD'});
 
@@ -19,7 +19,7 @@ export const ProductRender = ({product, isRemovable = false}) => {
             <p>{name}</p>
             <p>{dolarCurrency}</p>
             {isRemovable ? (
-                <Button name='Delete'icon={<FiTrash2 />} type='button' onClick={() => dispatch(removeFromCartThunk(id))}></Button>
+                <Button name='Delete'icon={<FiTrash2 />} type='button' onClick={() => dispatch(removeFromCartThunk(product))}></Button>
             ) : (
                 <Button name='Buy' icon={<FiShoppingBag />} type='button' onClick={() => dispatch(addToCartThunk(product))}></Button>
             )}
